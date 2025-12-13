@@ -63,7 +63,7 @@ Instance.new("UICorner", autoBtn).CornerRadius = UDim.new(0,12)
 local status = Instance.new("TextLabel", frame)
 status.Size = UDim2.new(1,-40,0,50)
 status.Position = UDim2.new(0,20,1,-60)
-status.Text = "Cargando Titans..."
+status.Text = "Cargando..."
 status.TextColor3 = Color3.fromRGB(200,200,200)
 status.TextScaled = true
 status.BackgroundTransparency = 1
@@ -96,8 +96,8 @@ local antiFallConnection = nil
 local autoAttackActive = false
 
 local titansFolder = Workspace:WaitForChild("Titans", 10)
-if not titansFolder then status.Text="Carpeta Titans no encontrada"; return end
-status.Text = "Titans OK | Listo para farm"
+if not titansFolder then status.Text="Titanes No Detectados :c"; return end
+status.Text = "Titanes Detectados | Todo listo!"
 
 local function isAlive(model)
     local main = model:FindFirstChild("Main")
@@ -298,5 +298,6 @@ titansFolder.ChildAdded:Connect(function(titan)
         if LowerTeeth then LowerTeeth:Destroy() end
     end
 end)
+
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
