@@ -140,7 +140,7 @@ local function enableAntiFall()
             local nape = currentTarget:FindFirstChild("Nape")
             local root = getRoot()
             if nape and root then
-                local back = nape.CFrame.LookVector * -18
+                local back = nape.CFrame.LookVector * -14
                 local safePos = nape.Position + back + Vector3.new(0, 9, 0)
                 root.CFrame = CFrame.new(safePos, nape.Position)
             end
@@ -301,6 +301,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
