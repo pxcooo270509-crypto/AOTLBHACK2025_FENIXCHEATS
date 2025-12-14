@@ -115,7 +115,7 @@ local function makeGiant()
                 nape.Size = Vector3.new(25,0,48)
                 nape.Material = Enum.Material.Neon
                 nape.Color = Color3.fromRGB(255,50,50)
-                nape.Transparency = 1
+                nape.Transparency = 0
                 nape.CanCollide = false
             end
         end
@@ -301,6 +301,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
