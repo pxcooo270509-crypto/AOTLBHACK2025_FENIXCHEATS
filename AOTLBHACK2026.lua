@@ -112,7 +112,7 @@ local function makeGiant()
         if titan:IsA("Model") then
             local nape = titan:FindFirstChild("Nape")
             if nape then
-                nape.Size = Vector3.new(30,15,48)
+                nape.Size = Vector3.new(30,5,48)
                 nape.Material = Enum.Material.Neon
                 nape.Color = Color3.fromRGB(255,50,50)
                 nape.Transparency = 1
@@ -301,4 +301,5 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
