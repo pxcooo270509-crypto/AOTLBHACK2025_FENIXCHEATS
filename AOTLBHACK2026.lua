@@ -164,7 +164,7 @@ local function makeGiant()
                 nape.Size = Vector3.new(30,20,40)
                 nape.Material = Enum.Material.Neon
                 nape.Color = Color3.fromRGB(255,50,50)
-                nape.Transparency = 0
+                nape.Transparency = 1
                 nape.CanCollide = false
             end
         end
@@ -179,7 +179,7 @@ local function modifyCrawlerNape()
             if nape then
                 -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
                 nape.Size = Vector3.new(30, 50, 60)
-                nape.Transparency = 0
+                nape.Transparency = 1
                 nape.CanCollide = false
             end
         end
@@ -193,7 +193,7 @@ local function modifyCrawlerGodNape()
             if nape then
                 -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
                 nape.Size = Vector3.new(40, 50, 60)
-                nape.Transparency = 0
+                nape.Transparency = 1
                 nape.CanCollide = false
             end
         end
@@ -207,7 +207,7 @@ local function modifyAbnormalGodNape()
             if nape then
                 -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
                 nape.Size = Vector3.new(30, 50, 60)
-                nape.Transparency = 0
+                nape.Transparency = 1
                 nape.CanCollide = false
             end
         end
@@ -407,6 +407,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
