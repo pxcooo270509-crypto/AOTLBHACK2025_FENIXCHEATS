@@ -181,7 +181,7 @@ local function modifyCrawlerNape()
             local nape = titan:FindFirstChild("Nape")
             if nape then
                 -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
-                nape.Size = Vector3.new(30, 50, 60)
+                nape.Size = Vector3.new(40, 50, 60)
                 nape.Transparency = 1
                 nape.CanCollide = false
             end
@@ -248,7 +248,7 @@ local function enableAntiFall()
             local nape = currentTarget:FindFirstChild("Nape")
             local root = getRoot()
             if nape and root then
-                local back = nape.CFrame.LookVector * -16
+                local back = nape.CFrame.LookVector * -17
                 local safePos = nape.Position + back + Vector3.new(0, 9, 0)
                 root.CFrame = CFrame.new(safePos, nape.Position)
             end
@@ -279,7 +279,7 @@ local function stopAutoAttack() autoAttackActive = false end
 local function tpTo(nape)
     local root = getRoot()
     if not root or not nape then return end
-    local back = nape.CFrame.LookVector * -16
+    local back = nape.CFrame.LookVector * -17
     local pos = nape.Position + back + Vector3.new(0,8,0)
     TweenService:Create(root, TweenInfo.new(0.05), {CFrame = CFrame.new(pos, nape.Position)}):Play()
     task.wait(0.05)
@@ -410,6 +410,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
