@@ -158,18 +158,21 @@ end
 -- GIANT NAPE (35,20,70 como vos querías)
 local function makeGiant()
     for _, titan in ipairs(titansFolder:GetChildren()) do
-        if titan:IsA("Model") then
+        if titan:IsA("Model")
+        and (titan.Name == "NormalTitan" or titan.Name == "AbnormalTitan") then
+
             local nape = titan:FindFirstChild("Nape")
             if nape then
-                nape.Size = Vector3.new(30,20,40)
+                nape.Size = Vector3.new(30, 20, 40)
                 nape.Material = Enum.Material.Neon
-                nape.Color = Color3.fromRGB(255,50,50)
+                nape.Color = Color3.fromRGB(255, 50, 50)
                 nape.Transparency = 1
                 nape.CanCollide = false
             end
         end
     end
 end
+
 
 -- NAPE PERSONALIZADO SOLO PARA CRAWLER TITAN
 local function modifyCrawlerNape()
@@ -407,6 +410,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
