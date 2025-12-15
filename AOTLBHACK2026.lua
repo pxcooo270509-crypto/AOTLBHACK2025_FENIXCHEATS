@@ -186,17 +186,57 @@ local function modifyCrawlerNape()
     end
 end
 
+local function modifyCrawlerGodNape()
+    for _, titan in ipairs(titansFolder:GetChildren()) do
+        if titan:IsA("Model") and titan.Name == "CrawlerGodTitan" then
+            local nape = titan:FindFirstChild("Nape")
+            if nape then
+                -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
+                nape.Size = Vector3.new(40, 50, 60)
+                nape.Transparency = 0
+                nape.CanCollide = false
+            end
+        end
+    end
+end
+
+local function modifyAbnormalGodNape()
+    for _, titan in ipairs(titansFolder:GetChildren()) do
+        if titan:IsA("Model") and titan.Name == "AbnormalGodTitan" then
+            local nape = titan:FindFirstChild("Nape")
+            if nape then
+                -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
+                nape.Size = Vector3.new(30, 50, 60)
+                nape.Transparency = 0
+                nape.CanCollide = false
+            end
+        end
+    end
+end
 giantBtn.Activated:Connect(function()
     giantOn = not giantOn
     giantBtn.Text = giantOn and "GIANT NAPE ON" or "GIANT NAPE OFF"
     giantBtn.BackgroundColor3 = giantOn and Color3.fromRGB(40,200,40) or Color3.fromRGB(200,40,40)
+
     if giantOn then
-            modifyCrawlerNape()
+        -- Aplicar una vez
         makeGiant()
-        spawn(function() while giantOn do makeGiant() task.wait(0.5) end end)
+        modifyCrawlerNape()
+        modifyCrawlerGodNape()
+        modifyAbnormalGodNape()
+
+        -- Mantener forzado
+        task.spawn(function()
+            while giantOn do
+                makeGiant()
+                modifyCrawlerNape()
+                modifyCrawlerGodNape()
+                modifyAbnormalGodNape()
+                task.wait(0.5)
+            end
+        end)
     end
 end)
-
 -- ANTICAÍDA INMORTAL
 local function enableAntiFall()
     if antiFallConnection then antiFallConnection:Disconnect() end
@@ -367,6 +407,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
