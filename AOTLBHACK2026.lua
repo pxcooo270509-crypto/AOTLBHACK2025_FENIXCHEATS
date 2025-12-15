@@ -9,6 +9,55 @@ local Workspace = game:GetService("Workspace")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
+
+-- INMORTALIDAD CONTROLADA
+-- =========================
+local immortalConnections = {}
+
+local function enableImmortal()
+    local char = player.Character or player.CharacterAdded:Wait()
+    local humanoid = char:WaitForChild("Humanoid")
+
+    humanoid.BreakJointsOnDeath = false
+    humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+    humanoid.MaxHealth = math.huge
+    humanoid.Health = humanoid.MaxHealth
+
+    table.insert(immortalConnections,
+        humanoid.HealthChanged:Connect(function(hp)
+            if hp <= 0 then
+                humanoid.Health = humanoid.MaxHealth
+            end
+        end)
+    )
+
+    table.insert(immortalConnections,
+        humanoid.StateChanged:Connect(function(_, state)
+            if state == Enum.HumanoidStateType.Dead then
+                humanoid:ChangeState(Enum.HumanoidStateType.Physics)
+                humanoid.Health = humanoid.MaxHealth
+            end
+        end)
+    )
+end
+
+local function disableImmortal()
+    for _, c in ipairs(immortalConnections) do
+        pcall(function() c:Disconnect() end)
+    end
+    immortalConnections = {}
+
+    local char = player.Character
+    if char then
+        local humanoid = char:FindFirstChild("Humanoid")
+        if humanoid then
+            humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+            humanoid.MaxHealth = 100
+            humanoid.Health = math.clamp(humanoid.Health, 1, humanoid.MaxHealth)
+        end
+    end
+end
+
 local function getRoot()
     local char = player.Character or player.CharacterAdded:Wait()
     return char:WaitForChild("HumanoidRootPart")
@@ -122,11 +171,27 @@ local function makeGiant()
     end
 end
 
+-- NAPE PERSONALIZADO SOLO PARA CRAWLER TITAN
+local function modifyCrawlerNape()
+    for _, titan in ipairs(titansFolder:GetChildren()) do
+        if titan:IsA("Model") and titan.Name == "CrawlerTitan" then
+            local nape = titan:FindFirstChild("Nape")
+            if nape then
+                -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
+                nape.Size = Vector3.new(30, 50, 60)
+                nape.Transparency = 0
+                nape.CanCollide = false
+            end
+        end
+    end
+end
+
 giantBtn.Activated:Connect(function()
     giantOn = not giantOn
     giantBtn.Text = giantOn and "GIANT NAPE ON" or "GIANT NAPE OFF"
     giantBtn.BackgroundColor3 = giantOn and Color3.fromRGB(40,200,40) or Color3.fromRGB(200,40,40)
     if giantOn then
+            modifyCrawlerNape()
         makeGiant()
         spawn(function() while giantOn do makeGiant() task.wait(0.5) end end)
     end
@@ -248,6 +313,7 @@ autoBtn.Activated:Connect(function()
     autoBtn.Text = autoOn and "AUTO FARM ON" or "AUTO FARM OFF"
     autoBtn.BackgroundColor3 = autoOn and Color3.fromRGB(40,200,40) or Color3.fromRGB(40,140,200)
     if autoOn then
+            enableImmortal()
         status.Text = "AUTO FARM ENCENDIDO - TP rápido + corte automático"
         currentTarget = nil
         -- NUEVO: ELIMINAR MANOS DE TODOS LOS TITANES EXISTENTES AL ACTIVAR
@@ -301,6 +367,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
