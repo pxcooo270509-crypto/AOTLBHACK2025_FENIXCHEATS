@@ -181,7 +181,7 @@ local function modifyCrawlerNape()
             local nape = titan:FindFirstChild("Nape")
             if nape then
                 -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
-                nape.Size = Vector3.new(40, 50, 60)
+                nape.Size = Vector3.new(20, 50, 80)
                 nape.Transparency = 1
                 nape.CanCollide = false
             end
@@ -195,7 +195,7 @@ local function modifyCrawlerGodNape()
             local nape = titan:FindFirstChild("Nape")
             if nape then
                 -- 👇 AJUSTA ESTOS VALORES A TU GUSTO
-                nape.Size = Vector3.new(40, 50, 60)
+                nape.Size = Vector3.new(20, 50, 80)
                 nape.Transparency = 1
                 nape.CanCollide = false
             end
@@ -410,6 +410,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
