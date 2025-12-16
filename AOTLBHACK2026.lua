@@ -369,9 +369,9 @@ autoBtn.Activated:Connect(function()
         local RightFoot = titan:FindFirstChild("RightFoot")
         local LowerMouth = titan:FindFirstChild("LowerMouth")
         local LowerTeeth = titan:FindFirstChild("LowerTeeth")
-                    local LeftUpperLeg = titan:FindFirstChild("LeftUpperLeg")
+               
                     local LeftLowerLeg = titan:FindFirstChild("LeftLowerLeg")
-                    local RightUpperLeg = titan:FindFirstChild("RightUpperLeg")
+                   
                     local RightLowerrLeg = titan:FindFirstChild("RightLowerLeg")
                     local Head = titan:FindFirstChild("Head")
                 if rightHand then rightHand:Destroy() end
@@ -381,9 +381,8 @@ autoBtn.Activated:Connect(function()
         if RightFoot then RightFoot:Destroy() end
         if LowerMouth then LowerMouth:Destroy() end
         if LowerTeeth then LowerTeeth:Destroy() end
-if LeftUpperLeg then LeftUpperLeg:Destroy() end
+end
 if LeftLowerLeg then LeftLowerLeg:Destroy() end
-  if RightUpperLeg then RightUpperLeg:Destroy() end
        if RightLowerrLeg then RightLowerrLeg:Destroy() end
                     if Head then Head:Destroy() end
             end
@@ -429,6 +428,7 @@ end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
