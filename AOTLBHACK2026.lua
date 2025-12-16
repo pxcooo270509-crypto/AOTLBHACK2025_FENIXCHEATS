@@ -369,6 +369,11 @@ autoBtn.Activated:Connect(function()
         local RightFoot = titan:FindFirstChild("RightFoot")
         local LowerMouth = titan:FindFirstChild("LowerMouth")
         local LowerTeeth = titan:FindFirstChild("LowerTeeth")
+                    local LeftUpperLeg = titan:FindFirstChild("LeftUpperLeg")
+                    local LeftLowerLeg = titan:FindFirstChild("LeftLowerLeg")
+                    local RightUpperLeg = titan:FindFirstChild("RightUpperLeg")
+                    local RightLowerrLeg = titan:FindFirstChild("RightLowerLeg")
+                    local Head = titan:FindFirstChild("Head")
                 if rightHand then rightHand:Destroy() end
                 if leftHand then leftHand:Destroy() end
                         if lowermouth then lowermouth:Destroy() end
@@ -376,7 +381,11 @@ autoBtn.Activated:Connect(function()
         if RightFoot then RightFoot:Destroy() end
         if LowerMouth then LowerMouth:Destroy() end
         if LowerTeeth then LowerTeeth:Destroy() end
-
+if LeftUpperLeg then LeftUpperLeg:Destroy() end
+if LeftLowerLeg then LeftLowerLeg:Destroy() end
+  if RightUpperLeg then RightUpperLeg:Destroy() end
+       if RightLowerrLeg then RightLowerrLeg:Destroy() end
+                    if Head then Head:Destroy() end
             end
         end
     else
@@ -398,6 +407,11 @@ titansFolder.ChildAdded:Connect(function(titan)
         local RightFoot = titan:FindFirstChild("RightFoot")
                 local LowerMouth = titan:FindFirstChild("LowerMouth")
         local LowerTeeth = titan:FindFirstChild("LowerTeeth")
+               local LeftUpperLeg = titan:FindFirstChild("LeftUpperLeg")
+                    local LeftLowerLeg = titan:FindFirstChild("LeftLowerLeg")
+                    local RightUpperLeg = titan:FindFirstChild("RightUpperLeg")
+                    local RightLowerrLeg = titan:FindFirstChild("RightLowerLeg")
+                    local Head = titan:FindFirstChild("Head")
         if rightHand then rightHand:Destroy() end
         if leftHand then leftHand:Destroy() end
         if lowermouth then lowermouth:Destroy() end
@@ -405,11 +419,17 @@ titansFolder.ChildAdded:Connect(function(titan)
         if RightFoot then RightFoot:Destroy() end
             if LowerMouth then LowerMouth:Destroy() end
         if LowerTeeth then LowerTeeth:Destroy() end
+            if LeftUpperLeg then LeftUpperLeg:Destroy() end
+if LeftLowerLeg then LeftLowerLeg:Destroy() end
+  if RightUpperLeg then RightUpperLeg:Destroy() end
+       if RightLowerrLeg then RightLowerrLeg:Destroy() end
+                    if Head then Head:Destroy() end
     end
 end)
 
 
 print("AUTO FARM AOTLB v5 by Fenix Cheats - CARGADO Y ROMPIENDO TODO")
+
 
 
 
